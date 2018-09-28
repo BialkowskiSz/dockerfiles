@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+    geodjango_postgres:
+        image: bialkowskisz/geodjango_postgres
+        restart: always
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=admin
+        container_name: geo_postgres
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - "8080:8080"
+        container_name: geo_adminer
